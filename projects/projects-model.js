@@ -17,13 +17,13 @@ function findTasksByProject(id) {
     .where("p.id", id)
     .select(
       "p.name as project",
-      "p.description as project_description",
       "t.description as task_description",
-      "t.notes as task_notes",
       "t.project_id",
-      "t.completed"
+      "t.completed",
     );
 }
+
+
 function addResource(newResource) {
   return db("resources")
     .insert(newResource)
